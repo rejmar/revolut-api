@@ -91,7 +91,7 @@ public class UserAccountController {
     }
 
     @DELETE
-    @Path("{id}/delete")
+    @Path("{id}")
     public Response delete(@PathParam("id") long userId) {
         try {
             return Response.ok().entity(userAccountService.deleteUser(userId)).build();
