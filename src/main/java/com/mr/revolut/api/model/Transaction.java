@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
 
 @Data
 @AllArgsConstructor
@@ -20,5 +19,5 @@ public class Transaction {
     @JsonProperty(required = true)
     private BigDecimal amount;
     @JsonProperty(required = true)
-    private OffsetDateTime transactionDate;
+    private String transactionDate;
 }

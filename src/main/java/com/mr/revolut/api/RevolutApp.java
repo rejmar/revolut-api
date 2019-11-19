@@ -1,6 +1,7 @@
 package com.mr.revolut.api;
 
 import com.mr.revolut.api.controller.UserAccountController;
+import com.mr.revolut.api.controller.UserTransactionController;
 import com.mr.revolut.api.database.DummyDB;
 import lombok.extern.log4j.Log4j2;
 import org.eclipse.jetty.server.Server;
@@ -17,11 +18,11 @@ public class RevolutApp {
         log.info("Starting Jetty server");
         Server server = new Server(8080);
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
-        context.setContextPath("/");
+        context.setContextPath("/api");
         server.setHandler(context);
         ServletHolder servletHolder = context.addServlet(ServletContainer.class, "/*");
         servletHolder.setInitParameter("jersey.config.server.provider.classnames",
-                UserAccountController.class.getCanonicalName());
+                UserAccountController.class.getCanonicalName() + "," + UserTransactionController.class.getCanonicalName());
 
         try {
             server.start();

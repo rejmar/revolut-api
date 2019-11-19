@@ -1,6 +1,5 @@
 package com.mr.revolut.api.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
@@ -17,9 +16,9 @@ public class UserAccount {
     @JsonProperty(required = true)
     private List<Transaction> transactions;
 
-    public UserAccount(long id, double balance) {
+    public UserAccount(long id, BigDecimal balance) {
         this.id = id;
-        this.balance = new BigDecimal(balance);
+        this.balance = balance;
         this.transactions = new ArrayList<>();
     }
 }
