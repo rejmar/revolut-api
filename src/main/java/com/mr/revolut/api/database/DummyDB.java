@@ -16,7 +16,10 @@ public class DummyDB {
     @Getter
     private static Map<Long, Transaction> transactions = new ConcurrentHashMap();
 
+    private static volatile long id;
+
     static {
+        id = 2L;
         userAccounts.put(1L, new UserAccount(1L, new BigDecimal("100.00")));
         userAccounts.put(2L, new UserAccount(2L, new BigDecimal("500.00")));
     }
@@ -25,11 +28,11 @@ public class DummyDB {
         return userAccounts.get(id);
     }
 
-    public static OptionalLong getMaxId() {
-        return userAccounts.values().stream().mapToLong(UserAccount::getId).max();
-    }
-
     public static OptionalLong getMaxTransactionId() {
         return transactions.values().stream().mapToLong(Transaction::getId).max();
+    }
+
+    public static synchronized long getNextId() {
+        return ++id;
     }
 }

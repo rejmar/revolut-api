@@ -26,12 +26,6 @@ class DummyDBTest {
     }
 
     @Test
-    @DisplayName("test getting max id number for user accounts Map")
-    void validCheckGettingMaxId() {
-        assertEquals(2L, DummyDB.getMaxId().getAsLong());
-    }
-
-    @Test
     @DisplayName("test finding existing user account in user accounts Map")
     void validCheckFindingUser() {
         assertNotNull(DummyDB.findUser(1L));

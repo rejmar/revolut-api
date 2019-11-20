@@ -32,17 +32,12 @@ public class UserAccountService {
     }
 
     public synchronized UserAccount createUserAccount(String balance) throws RevolutApiException {
-        OptionalLong maxId = DummyDB.getMaxId();
-        if (maxId.isPresent()) {
-            long nextId = maxId.getAsLong() + 1;
-            UserAccount newAccount = new UserAccount(nextId, new BigDecimal(balance));
-            log.info("New Account created: " + newAccount);
-            DummyDB.getUserAccounts().put(nextId, newAccount);
-            log.info("New Account persisted to database");
-            return newAccount;
-        } else {
-            throw new RevolutApiException("Cannot add new user account");
-        }
+        long nextId = DummyDB.getNextId();
+        UserAccount newAccount = new UserAccount(nextId, new BigDecimal(balance));
+        log.info("New Account created: " + newAccount);
+        DummyDB.getUserAccounts().put(nextId, newAccount);
+        log.info("New Account persisted to database");
+        return newAccount;
     }
 
     public void withdraw(UserAccount account, String amount) throws RevolutApiException {
