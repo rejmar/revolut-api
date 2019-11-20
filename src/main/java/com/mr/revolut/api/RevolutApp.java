@@ -30,7 +30,6 @@ public class RevolutApp {
             server.join();
         } catch (Exception e) {
             log.error(RevolutApp.class.getName() + ": " + e.getMessage());
-            e.printStackTrace();
         } finally {
             log.info("Closing Jetty server");
             server.destroy();

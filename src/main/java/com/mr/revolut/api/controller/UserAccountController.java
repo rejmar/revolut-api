@@ -17,7 +17,6 @@ import java.util.Map;
 @Produces(MediaType.APPLICATION_JSON)
 @Log4j2
 public class UserAccountController {
-
     private UserAccountService userAccountService = new UserAccountService();
 
     @GET

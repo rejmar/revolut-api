@@ -33,7 +33,7 @@ public class UserTransactionController {
             userTransactionService.transfer(userTransactionDTO);
             return Response.ok().entity(userTransactionDTO).build();
         } catch (RevolutApiException e) {
-            return Response.status(Response.Status.BAD_REQUEST).type(e.getMessage()).build();
+            return Response.status(Response.Status.BAD_REQUEST).entity(e.getMessage()).build();
         }
 
     }

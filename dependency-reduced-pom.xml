@@ -28,8 +28,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.4</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>9</source>
+                    <target>9</target>
                 </configuration>
             </plugin>
             <plugin>
@@ -65,6 +65,14 @@
                             </excludes>
                         </filter>
                     </filters>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
                 </configuration>
             </plugin>
         </plugins>
@@ -123,6 +131,42 @@
             <artifactId>lombok</artifactId>
             <version>1.18.10</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>4.1.2</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>groovy</artifactId>
+                    <groupId>org.codehaus.groovy</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>groovy-xml</artifactId>
+                    <groupId>org.codehaus.groovy</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>httpmime</artifactId>
+                    <groupId>org.apache.httpcomponents</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>hamcrest</artifactId>
+                    <groupId>org.hamcrest</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>tagsoup</artifactId>
+                    <groupId>org.ccil.cowan.tagsoup</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>json-path</artifactId>
+                    <groupId>io.rest-assured</groupId>
+                </exclusion>
+                <exclusion>
+                    <artifactId>xml-path</artifactId>
+                    <groupId>io.rest-assured</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
     <properties>

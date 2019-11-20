@@ -47,7 +47,8 @@ public class UserAccountService {
 
     public void withdraw(UserAccount account, String amount) throws RevolutApiException {
         BigDecimal transactionAmount = new BigDecimal(amount);
-
+        if (!verifyAmount(transactionAmount))
+            throw new RevolutApiException("Amount to withdraw must be greater than 0!");
         BigDecimal result = account.getBalance().subtract(transactionAmount);
 
         if (verifyAmount(result)) {
