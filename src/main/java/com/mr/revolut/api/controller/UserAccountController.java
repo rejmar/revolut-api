@@ -1,9 +1,9 @@
 package com.mr.revolut.api.controller;
 
+import com.mr.revolut.api.dao.UserAccount;
 import com.mr.revolut.api.database.DummyDB;
 import com.mr.revolut.api.dto.UserAccountDTO;
 import com.mr.revolut.api.exception.RevolutApiException;
-import com.mr.revolut.api.model.UserAccount;
 import com.mr.revolut.api.service.UserAccountService;
 import lombok.extern.log4j.Log4j2;
 

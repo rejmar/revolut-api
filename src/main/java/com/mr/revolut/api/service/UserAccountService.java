@@ -1,9 +1,9 @@
 package com.mr.revolut.api.service;
 
+import com.mr.revolut.api.dao.Transaction;
+import com.mr.revolut.api.dao.UserAccount;
 import com.mr.revolut.api.database.DummyDB;
 import com.mr.revolut.api.exception.RevolutApiException;
-import com.mr.revolut.api.model.Transaction;
-import com.mr.revolut.api.model.UserAccount;
 import lombok.extern.log4j.Log4j2;
 
 import java.math.BigDecimal;

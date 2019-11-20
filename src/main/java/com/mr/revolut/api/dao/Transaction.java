@@ -1,4 +1,4 @@
-package com.mr.revolut.api.model;
+package com.mr.revolut.api.dao;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;

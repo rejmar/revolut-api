@@ -1,8 +1,8 @@
 package com.mr.revolut.api.service;
 
+import com.mr.revolut.api.dao.UserAccount;
 import com.mr.revolut.api.database.DummyDB;
 import com.mr.revolut.api.exception.RevolutApiException;
-import com.mr.revolut.api.model.UserAccount;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

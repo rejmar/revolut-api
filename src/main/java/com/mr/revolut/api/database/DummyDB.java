@@ -1,7 +1,7 @@
 package com.mr.revolut.api.database;
 
-import com.mr.revolut.api.model.Transaction;
-import com.mr.revolut.api.model.UserAccount;
+import com.mr.revolut.api.dao.Transaction;
+import com.mr.revolut.api.dao.UserAccount;
 import lombok.Getter;
 
 import java.math.BigDecimal;
